@@ -3,7 +3,7 @@ import streamlit as st
 st.title("🎈 Alfie's Shack")
 st.write("Enter your name when prompted")
 
-name = st.text_input("Please enter yor name ")
+name = st.text_input("Please enter your name ")
 
 
 def register():
@@ -14,3 +14,4 @@ def register():
     password = st.text_input("Password: ")
     f = open("users.txt", "a")
     f.write("Username:",username,"\nForename:",forename,"\nSurname:",surname,"\nPassword:",password,"\n\n")
+    f.close()
