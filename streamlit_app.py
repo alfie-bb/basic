@@ -9,7 +9,7 @@ st.write("Enter your name when prompted")
 def register():
     surname = st.text_input("Enter your surname: ")
     forename = st.text_input("Enter your forname: ")
-    st.write("Hi"+forename+"!")
+    st.write("Hi "+forename+"!")
     username = st.text_input("Choose a username: ")
     password = st.text_input("Password: ")
     f = open("alfie-bb/basic/users.txt", "a")
