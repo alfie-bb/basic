@@ -34,5 +34,46 @@ def login():
         if not user_found:
             st.error("Invalid username or password")
         file.close()
-login()
+
+
+def dashboard():
+    st.write("Welcome Admin")
+    if st.button("Sign Out"):
+        st.session_state.logged_in = False
+    st.title("User Management and Login Record")
+    choice = st.sidebar.radio("Please select add or remove",
+    [":rainbow[Add]", ":rainbow[Remove]", ":rainbow[View]"])
+    if choice == ":rainbow[Add]":
+        username = st.text_input("Please enter username to add")
+        password = st.text_input("Please enter password", type="password")
+        if st.button("Add User"):
+            with open("userlist.csv", "a", newline='') as file:
+                file.write(username + "," + password + "\n")
+    elif choice == ":rainbow[Remove]":
+        username = st.text_input("Please enter username to remove")
+        if st.button("Remove User"):
+            df = pd.read_csv("userlist.csv")
+            if username in df["username"].values:
+                df = df[df["username"] != username]
+                df.to_csv("userlist.csv", index=False)
+                st.success(f"User {username} removed successfully.")
+            else:
+                st.error(f"Username {username} not found in the data.")          
+    else:
+        df = pd.read_csv("userlist.csv")
+        st.dataframe(df)
+        df = pd.read_csv("userlog.csv")
+        st.dataframe(df)
+
+
+
+
+
+
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+if st.session_state.logged_in:
+    dashboard()
+else:
+    login()
  # f.write("Username: "+username+"\nForename: "+forename+"\nSurname: "+surname+"\nPassword: "+password+"\n\n")
