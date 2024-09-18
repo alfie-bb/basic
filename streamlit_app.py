@@ -12,6 +12,6 @@ def register():
     st.write("Hi"+forename+"!")
     username = st.text_input("Choose a username: ")
     password = st.text_input("Password: ")
-    f = open("users.txt", "a")
+    f = open("alfie-bb/basic/users.txt", "a")
     f.write("Username:",username,"\nForename:",forename,"\nSurname:",surname,"\nPassword:",password,"\n\n")
     f.close()
