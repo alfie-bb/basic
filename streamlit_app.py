@@ -33,5 +33,5 @@ def login():
         if not user_found:
             st.error("Invalid username or password")
         file.close()
-
+login()
  # f.write("Username: "+username+"\nForename: "+forename+"\nSurname: "+surname+"\nPassword: "+password+"\n\n")
