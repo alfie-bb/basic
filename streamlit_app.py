@@ -3,7 +3,7 @@ import streamlit as st
 st.title("🎈 Alfie's Shack")
 st.write("Enter your name when prompted")
 
-name = st.text_input("Please enter your name ")
+# name = st.text_input("Please enter your name ")
 
 
 def register():
