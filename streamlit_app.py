@@ -13,7 +13,7 @@ def register():
     username = st.text_input("Choose a username: ")
     password = st.text_input("Password: ")
     f = open("users.txt", "a")
-    f.write("Username:",username,"\nForename:",forename,"\nSurname:",surname,"\nPassword:",password,"\n\n")
+    f.write("Username: "+username+"\nForename: "+forename+"\nSurname: "+surname+"\nPassword: "+password+"\n\n")
     f.close()
 
 register()
