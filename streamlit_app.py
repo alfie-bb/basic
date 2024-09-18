@@ -15,3 +15,5 @@ def register():
     f = open("alfie-bb/basic/users.txt", "a")
     f.write("Username:",username,"\nForename:",forename,"\nSurname:",surname,"\nPassword:",password,"\n\n")
     f.close()
+
+register()
