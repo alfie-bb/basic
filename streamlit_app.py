@@ -13,7 +13,7 @@ def register():
     username = st.text_input("Choose a username: ")
     password = st.text_input("Password: ")
     st.button("Submit")
-    f = open("users.csv", "a", "utf-8-sig")
+    f = open("users.csv", "a")
     f.write("Username: "+username+"\nForename: "+forename+"\nSurname: "+surname+"\nPassword: "+password+"\n\n")
     f.close()
 
